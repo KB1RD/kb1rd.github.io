@@ -1,8 +1,86 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
   <head>
-    <title>KB1RD</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="KB1RD, Nathan Pennie, Nathan, Pennie, kb1rd.net">
+    <meta name="description" content="KB1RD's Website">
+    <title>KB1RD.net</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <style>
+    .inner-section{
+      margin: auto;
+      padding: 15px;
+      max-width: 1000px;
+    }
+    .social {
+      margin: 2px;
+      color: #444;
+    }
+    .scrollbutton {}
+    .scrollbutton a { outline: 0; }
+    .nav {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      outline: 0;
+    }
+    </style>
   </head>
+
   <body>
-    <p>Just a placeholder for my website.</p>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div id="navbar" class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="nav navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="navbar-brand" style="font-size: 30px; margin-top: 10px; margin-bottom: 10px;">
+            <a style="text-decoration: none;" href="#top"><b>KB1RD</b>.net</a>
+          </span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="nav navbar-nav">
+            <li class="scrollbutton"><a href="#about">About</a></li>
+            <li class="scrollbutton"><a href="#projects">Projects</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right"><div style="margin: 10px;">
+            <a class="social" target="_blank" href="https://github.com/KB1RD"><i class="fa fa-github" aria-hidden="true"></i></a>
+          </div></ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--- JUMBOTRON --->
+    <div class="jumbotron color-light" id="top">
+      <div class="inner-section">
+        <h1>KB1RD's uBlock Origin List</h1>
+        <p>My tracker blocking lists for <a href="https://ublock.org/" target="new" style="color: white;">uBlock Origin.</a> I'd reccomend you use this short list a few many others. This list will block many sites (Google, Facebook, Twitter, etc.) unless you are actually on the site. The list is GPL licensed and on my GitHub.</p>
+        <a class="btn btn-default" href="https://github.com/KB1RD/ublock-filters" target="new">Show / Download</a>
+      </div>
+    </div>
+
+    <!--- ABOUT --->
+    <div class="inner-section" id="about">
+      <h1>About</h1>
+      <p>Hi, I'm Nathan Pennie, aka KB1RD! I have an Amateur Extra class radio license and enjoy working with computers and electronics. I use Linux as my primary OS and I am a supporter of the Free Software Movement. In my free time I code (mostly C++) and I design electronic circuits. I am not on the air often, mostly because I don't have a HF radio. When I am on the air, I'm mostly on a <a href="http://www.cc-arc.org/" target="new">Clay Center Amateur Radio Club</a> Net.</p><p>73,<br>KB1RD</p>
+      <br><br>
+    </div>
+
+    <!--- PROJECTS --->
+    <div class="inner-section" id="projects">
+      <h1>Projects</h1>
+      <center><h3 style="margin-top:100px; margin-bottom:100px; color:#555753;">Nothing here - Yet!</h3></center>
+    </div>
   </body>
 </html>
