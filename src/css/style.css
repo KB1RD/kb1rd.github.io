@@ -1,0 +1,304 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/base.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/base";
+ */
+@tailwind base;
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+@tailwind utilities;
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
+
+/* DEFAULT */
+
+@font-face {
+  font-family: amble;
+  src: url(/fonts/amble/Amble-Regular-webfont.woff);
+}
+
+@font-face {
+  font-family: amble;
+  src: url(/fonts/amble/Amble-Bold-webfont.woff);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: amble;
+  src: url(/fonts/amble/Amble-Light-webfont.woff);
+  font-weight: light;
+}
+
+@font-face {
+  font-family: amble;
+  src: url(/fonts/amble/Amble-Italic-webfont.woff);
+  font-style: italic;
+}
+
+@font-face {
+  font-family: amble;
+  src: url(/fonts/amble/Amble-BoldItalic-webfont.woff);
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: amble;
+  src: url(/fonts/amble/Amble-LightItalic-webfont.woff);
+  font-weight: light;
+  font-style: italic;
+}
+
+body {
+  font-family: amble;
+}
+
+::selection {
+  /* background-color: #0002; */
+  @apply bg-theme-primary text-white;
+}
+
+.select-white ::selection {
+  /* background-color: #0002; */
+  @apply bg-white text-theme-primary;
+}
+
+nav ::selection {
+  @apply bg-transparent;
+}
+
+a, .navbar-slant {
+  position: relative;
+  z-index: 1;
+}
+
+/* LINK STYLING */
+a {
+  @apply text-grey-dark font-bold relative no-underline t-4 inline-block;
+}
+a:hover {
+  @apply t-4 text-theme-primary;
+  text-shadow: 0px 0px 2px #468ffd77;
+}
+.slantlink, .pill, nav a, .slantlink:hover, .pill:hover, nav a:hover {
+  @apply inline-block;
+  text-shadow: 0px 0px 0px #0000;
+}
+.slantlink::after, .pill::after {
+  @apply bg-theme-primary t-3;
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -10px;
+  right: -10px;
+  top: -1px;
+  z-index: -1;
+  transform: skew(-20deg) scale(0, 1);
+  transform-origin: left;
+  box-shadow: 0 0px 5px 2px #468ffd40;
+}
+.slantlink:hover, .pill:hover {
+  @apply text-white;
+}
+.slantlink:hover::after, .pill:hover::after {
+  transform: skew(-20deg) scale(1, 1);
+}
+.slantlink.no-link-hover-fx:hover::after, .pill.no-link-hover-fx:hover::after {
+  transform: skew(-20deg) scale(0, 1);
+}
+.slantlink:focus, .pill:focus {
+  @apply outline-none;
+}
+
+/* Where colors are inverted or the opposite color scheme is wanted for any reason */
+.select-white .slantlink:hover, .select-white .pill:hover {
+  @apply text-theme-primary;
+}
+.select-white .slantlink::after, .select-white .pill::after {
+  @apply bg-white;
+  box-shadow: 0 0px 5px 2px #fff4;
+}
+
+/* BLOG PILLS */
+
+a.pill {
+  @apply text-white t-4 mx-4;
+  filter: drop-shadow(2px 5px 10px #468ffd40);
+}
+a.pill:hover {
+  @apply text-theme-primary t-4;
+  filter: drop-shadow(2px 5px 6px #468ffd80);
+}
+a.pill::after {
+  @apply inline-block whitespace-nowrap rect-slant-corners text-xs t-4 bg-theme-primary border-transparent;
+  top: -6px;
+  bottom: -6px;
+  left: -12px;
+  right: -12px;
+  transform: none;
+}
+a.pill:hover::after {
+  @apply bg-white;
+  transform: none;
+}
+
+.select-white a.pill {
+  @apply text-theme-primary;
+  filter: drop-shadow(2px 5px 10px #ffffff40);
+}
+.select-white a.pill:hover {
+  filter: drop-shadow(2px 5px 6px #ffffff80);
+}
+.select-white a.pill::after {
+  @apply bg-white;
+}
+
+/* HEADING */ 
+h1 {
+  @apply text-4xl text-grey-darkest;
+}
+
+h2 {
+  @apply text-3xl text-grey-darkest;
+}
+
+h3 {
+  @apply text-2xl text-grey-darkest;
+}
+
+.section-header {
+  @apply text-3xl text-grey-darkest relative inline-block;
+}
+
+/* NAVBAR STYLING */
+.navbar-top-transparent {
+  @apply bg-white;
+}
+[data-scroll-top=top] .navbar-top-transparent[data-expanded=false] {
+  @apply bg-transparent;
+}
+
+.navlink {
+  @apply t-4 text-white;
+}
+
+.navbar-slant-flat {
+  box-shadow: 0px 2px #d8d8d8;
+  transform: translate(0px, -2px);
+}
+.navbar-slant::after {
+  @apply bg-grey-lightest;
+  transform: skew(-20deg) translate(0px, -2px);
+  box-shadow: 3px 2px #d8d8d8;
+
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: -20px;
+  right: 0px;
+}
+
+/* PROJECT SECTION STYLING */
+.rect-slant-corners {
+  clip-path: polygon(0% 16px, 16px 0%, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+  box-shadow: 0 0px 5px 2px #468ffd40;
+}
+
+.blue-ext-box-hover {
+  @apply t-4;
+  filter: drop-shadow(2px 5px 10px #468ffd40);
+}
+.blue-ext-box-hover:hover {
+  filter: drop-shadow(5px 8px 10px #468ffd50);
+}
+
+/* BLOG STYLING */
+
+.blog-post p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
+  margin-top: 1em;
+}
+
+/* IMAGE STYLING */
+
+/* 
+ * Used in the gallery to override Gatsby settings. I might make a child:
+ * tailwind selector to help with stuff like this
+ */
+.child-img-object-contain img {
+  object-fit: contain !important;
+}
+
+.bg-mobile-fixed-auto,
+.bg-mobile-fixed-auto::before,
+.bg-mobile-fixed-auto::after {
+  background-attachment: scroll;
+}
+@screen md {
+  .bg-mobile-fixed-auto,
+  .bg-mobile-fixed-auto::before,
+  .bg-mobile-fixed-auto::after {
+    background-attachment: fixed;
+  }
+}
