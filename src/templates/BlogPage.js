@@ -14,7 +14,7 @@ function BlogPageUnfiltered({ data, posts, tag }) {
       <h2 className="text-white">{node.frontmatter.title}</h2>
       <p className="text-white"><b>{node.frontmatter.date}</b></p>
       <p className="text-grey-lightest m-4">{node.frontmatter.description}</p>
-      <Link className="text-white mx-4 slantlink" to={"/blog/" + node.frontmatter.slug_date + "/" + node.frontmatter.slug}>Read More</Link>
+      <p className="text-right"><Link className="text-white mx-4 slantlink text-right" to={"/blog/" + node.frontmatter.slug_date + "/" + node.frontmatter.slug}>Read More</Link></p>
     </div>
   );
 
@@ -58,7 +58,7 @@ export { BlogPageUnfiltered };
 
 export const query = graphql`
   query($tag : [String]) {
-    allMarkdownRemark(filter: {frontmatter: {tags: {in: $tag}}}) {
+    allMarkdownRemark(filter: {frontmatter: {tags: {in: $tag}}}, sort: {order: DESC, fields: frontmatter___date}) {
       group(field: frontmatter___tags) {
         fieldValue
       }

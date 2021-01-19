@@ -288,6 +288,14 @@ h3 {
   margin-top: 1em;
 }
 
+code {
+  @apply bg-grey-lightest block px-3 py-2 rounded-lg overflow-x-scroll;
+}
+
+p code, h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+  @apply inline px-1 py-0 overflow-hidden rounded;
+}
+
 /* IMAGE STYLING */
 
 /* 

@@ -18,11 +18,13 @@ export default () => (
       <div className="lg:w-64 flex-shrink-0">
         <div className="m-4 leading-loose text-center">
           <h1 className="mb-6">Tags</h1>
-          { data.allMarkdownRemark.group.map(({ fieldValue }) => (
-            <Link className="pill" to={"/blog/" + fieldValue} key={fieldValue}>
-              #{ fieldValue }
-            </Link>
-          )) }
+          <div className="flex flex-wrap flex-row justify-around">
+            { data.allMarkdownRemark.group.map(({ fieldValue }) => (
+              <Link className="pill block my-2" to={"/blog/" + fieldValue} key={fieldValue}>
+                #{ fieldValue }
+              </Link>
+            )) }
+          </div>
         </div>
       </div>
     )}

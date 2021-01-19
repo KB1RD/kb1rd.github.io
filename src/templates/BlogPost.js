@@ -24,17 +24,17 @@ const BlogPostTemplate = ({ data }) => {
       <div className="bg-theme-primary select-white text-grey-lightest">
         <div className="container mx-auto py-24 pt-32 px-4">
           <h1 className="text-white">{page.frontmatter.title}</h1>
+          <p className="font-bold">{page.frontmatter.date}</p>
           <p className="italic">{page.frontmatter.description}</p>
           <p>
             { page.frontmatter.tags.length ? (
-              <p className="mt-8">
-                Tagged
+              <div className="flex flex-wrap flex-row justify-left mt-6">
                 { tags.map((tag) => (
-                  <Link className="pill" to={"/blog/" + tag} key={tag}>
+                  <Link className="pill block my-2" to={"/blog/" + tag} key={tag}>
                     #{ tag }
                   </Link>
                 )) }
-              </p>
+              </div>
             ) : [] }
           </p>
         </div>
