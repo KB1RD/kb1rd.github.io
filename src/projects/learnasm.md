@@ -2,7 +2,7 @@
 order: 0
 title: "LearnASM"
 image: "learnasm.png"
-description: "A in-browser assembler complete with a virtual CPU visualizer and a learn mode to teach assembly. Due to lack of use, I currently do not maintain this project, but it should still work."
+description: "An in-browser assembly code simulator aimed at teaching the fundamentals of assembly language. The virtual computer uses a custom architecture similar to ARM, but with a 16-bit address space and 8 registers."
 buttons:
   - title: "Try It"
     url: "https://learnasm.kb1rd.net/"
