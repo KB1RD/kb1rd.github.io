@@ -128,7 +128,7 @@ a {
   @apply text-grey-dark font-bold relative no-underline t-4 inline-block;
 }
 a:hover {
-  @apply t-4 text-theme-primary;
+  @apply text-theme-primary;
   text-shadow: 0px 0px 2px #468ffd77;
 }
 .slantlink, .pill, nav a, .slantlink:hover, .pill:hover, nav a:hover {
@@ -162,6 +162,14 @@ a:hover {
 }
 
 /* Where colors are inverted or the opposite color scheme is wanted for any reason */
+.select-white a {
+  @apply text-grey-lightest font-bold relative no-underline t-4 inline-block;
+  text-shadow: 0px 0px 2px #fff5;
+}
+.select-white a:hover {
+  @apply text-white;
+  text-shadow: 0px 0px 3px #fff7;
+}
 .select-white .slantlink:hover, .select-white .pill:hover {
   @apply text-theme-primary;
 }

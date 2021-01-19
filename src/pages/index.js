@@ -40,14 +40,16 @@ function IndexPage({ data }) {
         <div className="container mx-auto py-24 pt-32 px-4">
           <h1 className="text-white">Hi, I'm Nathan Pennie</h1>
           <p>
-            When I'm not ski racing, I enjoy computer programming and electrical
-            engineering. I use these skills to do small jobs, such as small
-            business websites or beginner electronics kits. I have an Amateur
-            Extra class radio license (hence the callsign, KB1RD) and I can be
-            found on the Sci-Tech Amateur Radio Society Tuesday radio nets. I
-            use Linux as my primary OS and I can program in a wide variety of
-            languages. Of course, nearly every weekend during the winter, I can
-            be found skiing at my favorite ski mountain, Cannon.
+            I enjoy alpine ski racing, flying gliders, and working on my many
+            projects. I've recently been involved projects surrounding
+            the <a href="https://matrix.org" target="_blank">Matrix</a> protocol
+            and I often work with open source and free software. I also help out
+            at <a href="https://nescitech.org" target="_blank">New England
+            Sci-Tech</a>, a local startup makerspace in Natick, MA. I am often
+            identified by my username (KB1RD), which is an amateur radio
+            callsign. On weekends, I can be found skiing (usually at Cannon) or
+            flying with the Greater Boston Soaring Club or the Franconia Soaring
+            Association.
           </p>
         </div>
       </div>
