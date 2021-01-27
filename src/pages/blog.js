@@ -5,7 +5,7 @@ import { BlogPageUnfiltered } from "../templates/BlogPage.js";
 
 export const query = graphql`
   query {
-    allFile(filter: {sourceInstanceName: {eq: "blog"}}) {
+    allFile(filter: {sourceInstanceName: {eq: "blog"}}, sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date}) {
       nodes {
         childMarkdownRemark {
           frontmatter {
