@@ -48,6 +48,10 @@ character back into the same position. So long as the events are replayed in ord
 complicated. Consider that a user inserts the letter <code>a</code>, then deletes it, then inserts the letter <code>b</code>. If the order is
 randomized, then the state of that region of text could be quite different: It could end up being <code>a</code>, <code>b</code>, or it could
 end up being removed entirely.</p>
+<p><strong>EDIT:</strong> <em>The fix detailed here involving Lamport clocks here isn&#x27;t in the original Logoot paper. It&#x27;s just a trivial
+fix to the ordering problem. The downside of this is that more memory is used as the old &quot;tombstones&quot; have to be
+stored, though they can be removed if an insertion is created in one&#x27;s place. Rather, the original paper assumes that
+all events are already ordered.</em></p>
 <p>Rather than ensuring that all of the operations are properly ordered, it&#x27;s easier to properly handle an unordered
 operation when it is processed. To do this, each atom is assigned a <a href="https://en.wikipedia.org/wiki/Lamport_timestamp">Lamport clock</a>.
 Whenever a new character is inserted over an old one, this clock is incremented. When a removal is recorded, the clock
