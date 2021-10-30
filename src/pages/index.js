@@ -33,7 +33,7 @@ function IndexPage({ data }) {
   return (
     <Layout
       fixedNav={true}
-      title="Home"
+      title="Nathan Pennie"
       additionalKeywords={[ 'about', 'projects' ]}
     >
       <div id="about" className="bg-theme-primary select-white text-grey-lightest">
