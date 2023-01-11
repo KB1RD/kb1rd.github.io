@@ -44,7 +44,7 @@
     "gatsby-plugin-eslint": "2.0.8",
     "gatsby-plugin-purgecss": "^5.0.0",
     "gatsby-source-filesystem": "^2.8.1",
-    "gatsby-transformer-remark": "^2.13.1",
+    "gatsby-transformer-remark": "^5.25.1",
     "html-react-parser": "^1.1.1",
     "postcss": "8.2.1",
     "prettier": "2.2.1",
