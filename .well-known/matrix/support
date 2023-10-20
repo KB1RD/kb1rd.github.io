@@ -1,0 +1,9 @@
+{
+    {
+        "contacts": [{
+            "matrix_id": "@kb1rd:kb1rd.net",
+            "email_address": "kb1rd@kb1rd.net",
+            "role": "admin"
+        }]
+    }
+}
